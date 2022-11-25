@@ -15,7 +15,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80.h),
-        child: const AppbarWidget(),
+        child: const AppbarWidget(
+          title: "Team Members",
+        ),
       ),
       body: Body(width: width, height: height),
       floatingActionButton: const FloatingWidget(),
