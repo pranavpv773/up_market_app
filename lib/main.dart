@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/routes.dart';
 import 'package:up_market_app/app/modules/add/view_model/add_notifier.dart';
+import 'package:up_market_app/app/modules/home/view_model/home_notifier.dart';
 import 'package:up_market_app/app/modules/splash/view/splash.dart';
 import 'package:up_market_app/app/modules/splash/view_model/splash_notifier.dart';
 
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (create) => AddNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (create) => HomeNotifier(),
         ),
       ],
       child: ScreenUtilInit(

@@ -1,7 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/colors.dart';
+import 'package:up_market_app/app/modules/home/view_model/home_notifier.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -64,7 +66,11 @@ class Body extends StatelessWidget {
                           icon: const Icon(
                             Icons.edit,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            context
+                                .read<HomeNotifier>()
+                                .editBottomSheet(context);
+                          },
                         ),
                       )
                     ],
