@@ -5,8 +5,9 @@ import 'package:up_market_app/app/app_style/colors.dart';
 class AppbarWidget extends StatelessWidget {
   const AppbarWidget({
     Key? key,
+    required this.title,
   }) : super(key: key);
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -17,8 +18,8 @@ class AppbarWidget extends StatelessWidget {
         ),
       ),
       backgroundColor: AppColors.avathar1,
-      title: const Text(
-        "Team Members",
+      title: Text(
+        title,
       ),
       centerTitle: true,
     );
