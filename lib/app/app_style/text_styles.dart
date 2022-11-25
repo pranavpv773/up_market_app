@@ -6,7 +6,7 @@ class AppTextstyles {
   static String? fontFamily = GoogleFonts.notoSans().fontFamily;
 
   static TextStyle h1 = TextStyle(
-    fontFamily: GoogleFonts.heebo().fontFamily,
+    fontFamily: GoogleFonts.sofia().fontFamily,
     letterSpacing: 0.1,
     fontWeight: FontWeight.w800,
     fontSize: 34.sp,

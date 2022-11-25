@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:up_market_app/app/app_style/colors.dart';
 import 'package:up_market_app/app/app_style/images.dart';
+import 'package:up_market_app/app/app_style/text_styles.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,7 +16,10 @@ class SplashScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FadeInDownBig(child: Center(child: Image.asset(AppImages.splash))),
-          const Text("TEAM"),
+          Text(
+            "TEAM",
+            style: AppTextstyles.h1,
+          ),
           const SizedBox(),
         ],
       ),
