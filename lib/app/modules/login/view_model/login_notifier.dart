@@ -7,6 +7,12 @@ class LoginNotifier with ChangeNotifier {
   final password = TextEditingController();
   final loginKey = GlobalKey<FormState>();
   bool obsecure = true;
+  bool signUp = false;
+
+  void cardFunction(bool change) {
+    signUp = change;
+    notifyListeners();
+  }
 
   bool obSecureFn() {
     if (obsecure == true) {
