@@ -66,8 +66,9 @@ class AddSCreen extends StatelessWidget {
                 ],
               ),
             ),
-            const ButtonWidget(
+            ButtonWidget(
               title: "ADD",
+              function: () {},
             )
           ],
         ),

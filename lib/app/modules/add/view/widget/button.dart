@@ -6,8 +6,10 @@ class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
     Key? key,
     required this.title,
+    required this.function,
   }) : super(key: key);
   final String title;
+  final VoidCallback function;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +24,7 @@ class ButtonWidget extends StatelessWidget {
               AppColors.avathar,
             ),
           ),
-          onPressed: () {},
+          onPressed: function,
           child: Text(
             title,
           ),
