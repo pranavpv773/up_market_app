@@ -4,7 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/routes.dart';
 import 'package:up_market_app/app/modules/add/view_model/add_notifier.dart';
 import 'package:up_market_app/app/modules/home/view_model/home_notifier.dart';
-import 'package:up_market_app/app/modules/splash/view/splash.dart';
+import 'package:up_market_app/app/modules/login/view/login.dart';
+import 'package:up_market_app/app/modules/login/view_model/login_notifier.dart';
 import 'package:up_market_app/app/modules/splash/view_model/splash_notifier.dart';
 
 import 'app/app_style/colors.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (create) => HomeNotifier(),
         ),
+        ChangeNotifierProvider(
+          create: (create) => LoginNotifier(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
@@ -43,7 +47,7 @@ class MyApp extends StatelessWidget {
               scaffoldBackgroundColor: AppColors.primary,
               primarySwatch: Colors.blue,
             ),
-            home: const SplashScreen(),
+            home: const LoginScreen(),
           );
         },
       ),
