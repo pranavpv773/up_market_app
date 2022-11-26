@@ -3,8 +3,10 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ic.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:provider/provider.dart';
+import 'package:up_market_app/app/app_style/routes.dart';
 import 'package:up_market_app/app/modules/add/view/widget/button.dart';
 import 'package:up_market_app/app/modules/add/view/widget/textform.dart';
+import 'package:up_market_app/app/modules/home/view/home_screen.dart';
 import 'package:up_market_app/app/modules/login/view_model/login_notifier.dart';
 
 class LoginFormWidget extends StatelessWidget {
@@ -44,6 +46,11 @@ class LoginFormWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(24.0),
                 child: ButtonWidget(
                   title: val.signUp ? "Sign Up" : 'Sign In',
+                  function: () {
+                    AppRoutes.removeScreenUntil(
+                      screen: const HomeScreen(),
+                    );
+                  },
                 ),
               ),
               Row(

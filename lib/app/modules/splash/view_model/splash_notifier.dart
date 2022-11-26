@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:up_market_app/app/app_style/routes.dart';
-import 'package:up_market_app/app/modules/home/view/home_screen.dart';
+import 'package:up_market_app/app/modules/login/view/login.dart';
 import 'package:up_market_app/app/modules/splash/view/no_internet.dart';
 
 class SplashNotifier with ChangeNotifier {
@@ -21,7 +21,7 @@ class SplashNotifier with ChangeNotifier {
       ),
     );
     AppRoutes.removeScreenUntil(
-      screen: check == true ? const HomeScreen() : const NoInternet(),
+      screen: check == true ? const LoginScreen() : const NoInternet(),
     );
   }
 

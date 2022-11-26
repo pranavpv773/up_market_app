@@ -59,7 +59,10 @@ class EditModelSheet extends StatelessWidget {
                 controller:
                     Provider.of<AddNotifier>(context, listen: false).roleCtrlr,
               ),
-              const ButtonWidget(title: "Update")
+              ButtonWidget(
+                title: "Update",
+                function: () {},
+              )
             ],
           ),
         ),
