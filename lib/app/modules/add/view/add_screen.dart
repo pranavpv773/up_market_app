@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/images.dart';
+import 'package:up_market_app/app/modules/add/view/widget/image.dart';
 import 'package:up_market_app/app/modules/add/view/widget/textform.dart';
 import 'package:up_market_app/app/modules/add/view_model/add_notifier.dart';
 import 'package:up_market_app/app/modules/home/view/widgets/appbar.dart';
@@ -32,10 +33,7 @@ class AddSCreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 80.w,
-                    backgroundImage: AssetImage(AppImages.avathar),
-                  ),
+                  const ImageProfileAdd(),
                   TextformsField(
                     icon: Icons.person,
                     title: "Name",
