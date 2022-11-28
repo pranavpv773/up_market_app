@@ -9,6 +9,7 @@ import 'package:up_market_app/app/modules/splash/view/splash.dart';
 import 'package:up_market_app/app/modules/splash/view_model/splash_notifier.dart';
 
 import 'app/app_style/colors.dart';
+import 'app/modules/add/view_model/image_notifier.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (create) => LoginNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (create) => ImageNotifier(),
         ),
       ],
       child: ScreenUtilInit(

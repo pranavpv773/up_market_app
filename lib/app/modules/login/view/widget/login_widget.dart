@@ -56,9 +56,11 @@ class LoginFormWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(val.signUp
-                      ? "Already have an account"
-                      : "New to our Platform?"),
+                  Text(
+                    val.signUp
+                        ? "Already have an account"
+                        : "New to our Platform?",
+                  ),
                   TextButton(
                     onPressed: () {
                       val.signUp
