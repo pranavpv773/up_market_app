@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:up_market_app/app/app_style/colors.dart';
 import 'package:up_market_app/app/modules/add/view/widget/textform.dart';
 import 'package:up_market_app/app/modules/add/view_model/add_notifier.dart';
 
 import 'button.dart';
 import 'image.dart';
+import 'loading_button.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -68,35 +66,6 @@ class Body extends StatelessWidget {
                   },
                 )
         ],
-      ),
-    );
-  }
-}
-
-class LoadingButton extends StatelessWidget {
-  const LoadingButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        width: double.infinity,
-        height: 40.h,
-        child: ElevatedButton(
-          style: ButtonStyle(
-            elevation: MaterialStateProperty.all(10),
-            backgroundColor: MaterialStateProperty.all(
-              AppColors.avathar,
-            ),
-          ),
-          onPressed: () {},
-          child: CupertinoActivityIndicator(
-            color: AppColors.kLight,
-          ),
-        ),
       ),
     );
   }

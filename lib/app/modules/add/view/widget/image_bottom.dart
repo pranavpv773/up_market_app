@@ -25,15 +25,15 @@ class ImageBottomSheet extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {
-                    context.read<ImageNotifier>().takecamera(context);
-                  },
-                  icon: Icon(
-                    Icons.camera_front_outlined,
-                    color: AppColors.kLight,
-                  ),
-                ),
+                // IconButton(
+                //   onPressed: () {
+                //     context.read<ImageNotifier>().takecamera(context);
+                //   },
+                //   icon: Icon(
+                //     Icons.camera_front_outlined,
+                //     color: AppColors.kLight,
+                //   ),
+                // ),
                 IconButton(
                   onPressed: () {
                     context.read<ImageNotifier>().takePhoto(context);

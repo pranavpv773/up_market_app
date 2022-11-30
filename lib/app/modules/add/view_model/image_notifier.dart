@@ -22,22 +22,22 @@ class ImageNotifier with ChangeNotifier {
     base64Encode(bayts);
   }
 
-  Future<void> takecamera(BuildContext context) async {
-    XFile? image = await ImagePicker().pickImage(
-      source: ImageSource.camera,
-    );
+  // Future<void> takecamera(BuildContext context) async {
+  //   XFile? image = await ImagePicker().pickImage(
+  //     source: ImageSource.camera,
+  //   );
 
-    if (image == null) {
-      return;
-    }
+  //   if (image == null) {
+  //     return;
+  //   }
 
-    imagefile = File(image.path);
+  //   imagefile = File(image.path);
 
-    final bayts = File(image.path).readAsBytesSync();
-    String encode = base64Encode(bayts);
-    changeImage(encode);
-    base64Encode(bayts);
-  }
+  //   final bayts = File(image.path).readAsBytesSync();
+  //   String encode = base64Encode(bayts);
+  //   changeImage(encode);
+  //   base64Encode(bayts);
+  // }
 
   Future<void> showBottomSheet(BuildContext context) async {
     showModalBottomSheet(

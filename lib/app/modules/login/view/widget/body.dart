@@ -32,7 +32,7 @@ class Body extends StatelessWidget {
               shadowColor: AppColors.primary,
               child: SizedBox(
                 width: width.w / 1.2.w,
-                height: height.h / 2.h,
+                height: height.h / 1.8.h,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

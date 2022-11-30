@@ -37,11 +37,11 @@ class AddNotifier with ChangeNotifier {
         final teamMate = firebaseFirestore.collection('teams').doc();
         final data = TeamModel(
           uid: teamMate.id,
-          name: nameCtrlr.text,
-          email: emailCtrlr.text,
-          phone: int.parse(phoneCtrlr.text),
-          section: sectionCtrlr.text,
-          role: roleCtrlr.text,
+          name: nameCtrlr.text.trim(),
+          email: emailCtrlr.text.trim(),
+          phone: int.parse(phoneCtrlr.text.trim()),
+          section: sectionCtrlr.text.trim(),
+          role: roleCtrlr.text.trim(),
           image: image,
         );
 
