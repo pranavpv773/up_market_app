@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "289622874702",
-    "project_id": "teamapp-7d54f",
-    "storage_bucket": "teamapp-7d54f.appspot.com"
+    "project_number": "888576550307",
+    "project_id": "upmarket-ae7aa",
+    "storage_bucket": "upmarket-ae7aa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:289622874702:android:638e9aa5851d98dd87c11f",
+        "mobilesdk_app_id": "1:888576550307:android:880b3a350bf956c096a616",
         "android_client_info": {
           "package_name": "com.example.up_market_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "289622874702-kd4o0v1c4io342rhsecd13ep7g8nmtf5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.up_market_app",
-            "certificate_hash": "6720b976b785c8cd98700f29cb7b8b7c74239cda"
-          }
-        },
-        {
-          "client_id": "289622874702-b6m7imfoip81ho01eihgl0pjnvbqrlnb.apps.googleusercontent.com",
+          "client_id": "888576550307-o9ae469spi70q1frnqsmdrd0l3b88jqa.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVpii9TuDKiYAuK5xh_KmcyweimdoSS0E"
+          "current_key": "AIzaSyCGICwDhntu9ZowUary_EynjFsVXbMO76c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "289622874702-b6m7imfoip81ho01eihgl0pjnvbqrlnb.apps.googleusercontent.com",
+              "client_id": "888576550307-o9ae469spi70q1frnqsmdrd0l3b88jqa.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,27 +36,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:289622874702:android:0eb324ffdb2dd5cb87c11f",
+        "mobilesdk_app_id": "1:888576550307:android:a308d9de7f73eb7d96a616",
         "android_client_info": {
-          "package_name": "com.example.user_management_app"
+          "package_name": "com.myuniquename.flutter_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "289622874702-b6m7imfoip81ho01eihgl0pjnvbqrlnb.apps.googleusercontent.com",
+          "client_id": "888576550307-v49ok1egj4l8kabd19dhrtb0uvhdag2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myuniquename.flutter_app",
+            "certificate_hash": "6720b976b785c8cd98700f29cb7b8b7c74239cda"
+          }
+        },
+        {
+          "client_id": "888576550307-o9ae469spi70q1frnqsmdrd0l3b88jqa.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVpii9TuDKiYAuK5xh_KmcyweimdoSS0E"
+          "current_key": "AIzaSyCGICwDhntu9ZowUary_EynjFsVXbMO76c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "289622874702-b6m7imfoip81ho01eihgl0pjnvbqrlnb.apps.googleusercontent.com",
+              "client_id": "888576550307-o9ae469spi70q1frnqsmdrd0l3b88jqa.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

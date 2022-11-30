@@ -43,6 +43,7 @@ class Body extends StatelessWidget {
                   key: const ValueKey(0),
                   endActionPane: ActionPane(
                     motion: const ScrollMotion(),
+                    // dragDismissible: true,
                     children: [
                       SlidableAction(
                         onPressed: (context) {
@@ -107,7 +108,13 @@ class Body extends StatelessWidget {
                                 icon: const Icon(
                                   Icons.edit,
                                 ),
-                                onPressed: () {
+                                onPressed: () async {
+                                  await context
+                                      .read<EditNotifier>()
+                                      .namingFunction(
+                                          context, snapshot.data!.docs[index]);
+
+                                  // ignore: use_build_context_synchronously
                                   context
                                       .read<HomeNotifier>()
                                       .editBottomSheet(context);

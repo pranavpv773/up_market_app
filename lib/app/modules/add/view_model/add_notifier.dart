@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,9 +19,10 @@ class AddNotifier with ChangeNotifier {
   bool loading = false;
   Future<void> addTeamMate(BuildContext context) async {
     loading = true;
+    notifyListeners();
     if (formKey.currentState!.validate()) {
-      loading = true;
       try {
+        log("reached");
         // calling our fireStore
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
         //calling our TeamModel
@@ -52,10 +55,12 @@ class AddNotifier with ChangeNotifier {
             loading = false;
             AppRoutes.backScreen();
             disposeCtrl(context);
+            notifyListeners();
           },
         );
       } on FirebaseException catch (e) {
         loading = false;
+        notifyListeners();
 
         Fluttertoast.showToast(
           msg: e.toString(),
@@ -64,6 +69,7 @@ class AddNotifier with ChangeNotifier {
       }
     }
     loading = false;
+    notifyListeners();
   }
 
   disposeCtrl(BuildContext context) {
