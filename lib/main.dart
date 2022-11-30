@@ -1,8 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/routes.dart';
 import 'package:up_market_app/app/modules/add/view_model/add_notifier.dart';
+import 'package:up_market_app/app/modules/home/view_model/edit_notifier.dart';
 import 'package:up_market_app/app/modules/home/view_model/home_notifier.dart';
 import 'package:up_market_app/app/modules/login/view_model/login_notifier.dart';
 import 'package:up_market_app/app/modules/splash/view/splash.dart';
@@ -11,7 +13,10 @@ import 'package:up_market_app/app/modules/splash/view_model/splash_notifier.dart
 import 'app/app_style/colors.dart';
 import 'app/modules/add/view_model/image_notifier.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -37,6 +42,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (create) => ImageNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (create) => EditNotifier(),
         ),
       ],
       child: ScreenUtilInit(
