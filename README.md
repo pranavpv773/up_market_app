@@ -1,16 +1,20 @@
 # up_market_app
 
-A new Flutter project.
+A Small Team mate add App.
 
-## Getting Started
+# Packages used
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  ## animate_do: ^3.0.2
+  ## flutter_screenutil: ^5.6.0
+  ## google_fonts: ^3.0.1
+  ## provider: ^6.0.4
+  ## iconify_flutter: ^0.0.5
+  ## image_picker: ^0.8.6
+  ## firebase_core: ^2.3.0
+  ## firebase_storage: ^11.0.6
+  ## cloud_firestore: ^4.1.0
+  ## fluttertoast: ^8.1.1
+  ## flutter_slidable: ^2.0.0
+  ## shimmer: ^2.0.0
+  ## firebase_auth: ^4.1.4
+  ## shared_preferences: ^2.0.15
