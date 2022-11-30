@@ -37,11 +37,11 @@ class AddNotifier with ChangeNotifier {
         final teamMate = firebaseFirestore.collection('teams').doc();
         final data = TeamModel(
           uid: teamMate.id,
-          name: nameCtrlr.text,
-          email: emailCtrlr.text,
-          phone: int.parse(phoneCtrlr.text),
-          section: sectionCtrlr.text,
-          role: roleCtrlr.text,
+          name: nameCtrlr.text.trim(),
+          email: emailCtrlr.text.trim(),
+          phone: int.parse(phoneCtrlr.text.trim()),
+          section: sectionCtrlr.text.trim(),
+          role: roleCtrlr.text.trim(),
           image: image,
         );
 
@@ -79,5 +79,35 @@ class AddNotifier with ChangeNotifier {
     sectionCtrlr.clear();
     context.read<ImageNotifier>().imgstring = "";
     roleCtrlr.clear();
+  }
+
+  mail(value) async {
+    final val = isValidEmail(value);
+    if (val == true) {
+      return null;
+    } else {
+      return "invalid email format";
+    }
+  }
+
+  phone(String value) async {
+    if (value.length > 10) {
+      return "invalid phone number";
+    } else if (value.length < 10) {
+      final val = 10 - value.length;
+      return "$val number is missing in phone number ";
+    }
+  }
+
+  validate(value) {
+    if (value!.isEmpty) {
+      return " Please fill this field";
+    }
+  }
+
+  bool isValidEmail(String input) {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(input);
   }
 }
