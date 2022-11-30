@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.up_market_app">
+    package="com.myuniquename.flutter_app">
    <application
         android:label="up_market_app"
         android:name="${applicationName}"

@@ -43,6 +43,7 @@ class Body extends StatelessWidget {
                   key: const ValueKey(0),
                   endActionPane: ActionPane(
                     motion: const ScrollMotion(),
+                    // dragDismissible: true,
                     children: [
                       SlidableAction(
                         onPressed: (context) {
