@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:up_market_app/app/app_style/colors.dart';
 import 'package:up_market_app/app/app_style/text_styles.dart';
@@ -30,8 +31,8 @@ class Body extends StatelessWidget {
               elevation: 10,
               shadowColor: AppColors.primary,
               child: SizedBox(
-                width: width / 1.2,
-                height: height / 2,
+                width: width.w / 1.2.w,
+                height: height.h / 2.h,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

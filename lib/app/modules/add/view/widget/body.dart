@@ -60,25 +60,7 @@ class Body extends StatelessWidget {
             ),
           ),
           context.watch<AddNotifier>().loading == true
-              ? Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 40.h,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(10),
-                        backgroundColor: MaterialStateProperty.all(
-                          AppColors.avathar,
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: CupertinoActivityIndicator(
-                        color: AppColors.kLight,
-                      ),
-                    ),
-                  ),
-                )
+              ? const LoadingButton()
               : ButtonWidget(
                   title: "ADD",
                   function: () {
@@ -86,6 +68,35 @@ class Body extends StatelessWidget {
                   },
                 )
         ],
+      ),
+    );
+  }
+}
+
+class LoadingButton extends StatelessWidget {
+  const LoadingButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        width: double.infinity,
+        height: 40.h,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(10),
+            backgroundColor: MaterialStateProperty.all(
+              AppColors.avathar,
+            ),
+          ),
+          onPressed: () {},
+          child: CupertinoActivityIndicator(
+            color: AppColors.kLight,
+          ),
+        ),
       ),
     );
   }

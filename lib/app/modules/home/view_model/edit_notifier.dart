@@ -17,6 +17,7 @@ class EditNotifier with ChangeNotifier {
   final sectionCtrlr = TextEditingController();
   String uidd = "";
   String image = "";
+  bool load = false;
   Future<void> deleteTeamMate(uid) async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
@@ -33,41 +34,50 @@ class EditNotifier with ChangeNotifier {
     emailCtrlr.text = doc['email'];
     sectionCtrlr.text = doc['section'];
     roleCtrlr.text = doc['role'];
+
     notifyListeners();
   }
 
   updateTeamMate(BuildContext context) async {
-    if (context.read<ImageNotifier>().imgstring.isEmpty) {
-      context.read<ImageNotifier>().imgstring = "";
-      image = context.read<ImageNotifier>().imgstring;
-    } else {
-      image = context.read<ImageNotifier>().imgstring;
+    load = true;
+    notifyListeners();
+    if (editFormKey.currentState!.validate()) {
+      if (context.read<ImageNotifier>().imgstring.isEmpty) {
+        load = true;
+        notifyListeners();
+        context.read<ImageNotifier>().imgstring = "";
+        image = context.read<ImageNotifier>().imgstring;
+      } else {
+        image = context.read<ImageNotifier>().imgstring;
+      }
+
+      FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+
+      //calling our userModel
+      final data = TeamModel(
+        uid: uidd,
+        name: nameCtrlr.text,
+        email: emailCtrlr.text,
+        phone: int.parse(phoneCtrlr.text),
+        section: sectionCtrlr.text,
+        role: roleCtrlr.text,
+        image: image,
+      );
+      await firebaseFirestore
+          .collection('teams')
+          .doc(uidd)
+          .update(
+            data.toMap(),
+          )
+          .then((value) {
+        AppRoutes.backScreen();
+        context.read<ImageNotifier>().imgstring = "";
+        load = false;
+        notifyListeners();
+      });
     }
 
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-
-    //calling our userModel
-    final data = TeamModel(
-      uid: uidd,
-      name: nameCtrlr.text,
-      email: emailCtrlr.text,
-      phone: int.parse(phoneCtrlr.text),
-      section: sectionCtrlr.text,
-      role: roleCtrlr.text,
-      image: image,
-    );
-    await firebaseFirestore
-        .collection('teams')
-        .doc(uidd)
-        .update(
-          data.toMap(),
-        )
-        .then((value) {
-      AppRoutes.backScreen();
-      context.read<ImageNotifier>().imgstring = "";
-      notifyListeners();
-    });
-
+    load = false;
     notifyListeners();
   }
 }
